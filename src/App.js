@@ -7,21 +7,26 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <AnimateSharedLayout >
+      <div style={{ display: "flex" }}>
+        <AnimateSharedLayout >
 
-        <Card layoutId="card" onClick={() => setIsOpen(!isOpen)} whileHover={{ scale: 1.1 }}>
-          Kapalı Kart.
+          <Card layoutId="card" onClick={() => setIsOpen(!isOpen)} whileHover={{ scale: 1.1 }}>
+            Kapalı Kart.
             </Card>
 
-        <AnimatePresence>
-          {
-            isOpen &&
-            <ModalContainer>
-              <Card2 animate={{ borderRadius: "20px" }} layoutId="card" onClick={() => setIsOpen(!isOpen)} transition={{ duration: 0.5 }}>Açık Kart.</Card2>
-            </ModalContainer>
-          }
-        </AnimatePresence>
-      </AnimateSharedLayout>
+          <AnimatePresence>
+            {
+              isOpen &&
+              <ModalContainer>
+                <Card2 animate={{ borderRadius: "20px" }} layoutId="card" onClick={() => setIsOpen(!isOpen)} transition={{ duration: 0.5 }}>Açık Kart.</Card2>
+              </ModalContainer>
+            }
+          </AnimatePresence>
+        </AnimateSharedLayout>
+      </div>
+      <div>
+        other items
+    </div>
     </>
   );
 }
