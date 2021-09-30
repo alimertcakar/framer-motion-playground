@@ -1,13 +1,20 @@
 import styled from "@emotion/styled";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion"
+import { motion, AnimateSharedLayout, AnimatePresence, useMotionValue, useTransform } from "framer-motion"
 import React, { useState } from "react";
 
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+
+
+  const ul = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  }
+  const li = { hidden: { x: -10, opacity: 0 }, visible: { opacity: 1 } }
   return (
     <>
-      <div style={{ display: "flex" }}>
+      {/* <div style={{ display: "flex" }}>
         <AnimateSharedLayout >
 
           <Card layoutId="card" onClick={() => setIsOpen(!isOpen)} whileHover={{ scale: 1.1 }}>
@@ -23,10 +30,18 @@ function App() {
             }
           </AnimatePresence>
         </AnimateSharedLayout>
-      </div>
+      </div> */}
       <div>
-        other items
-    </div>
+        sdasd
+
+
+        <motion.ul variants={ul} initial="hidden" animate="visible">
+          <motion.li variants={li}>MOTION</motion.li>
+          <motion.li variants={li}>MOTION</motion.li>
+          <motion.li variants={li}>MOTION</motion.li>
+        </motion.ul>
+
+      </div>
     </>
   );
 }
