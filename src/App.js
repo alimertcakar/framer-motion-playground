@@ -32,9 +32,6 @@ function App() {
         </AnimateSharedLayout>
       </div> */}
       <div>
-        sdasd
-
-
         <motion.ul variants={ul} initial="hidden" animate="visible">
           <motion.li variants={li}>MOTION</motion.li>
           <motion.li variants={li}>MOTION</motion.li>
