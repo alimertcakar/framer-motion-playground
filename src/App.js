@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { motion, AnimateSharedLayout, AnimatePresence, useMotionValue, useTransform } from "framer-motion"
 import React, { useState } from "react";
+import Something from "./Something";
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
           <motion.li variants={li}>MOTION</motion.li>
           <motion.li variants={li}>MOTION</motion.li>
         </motion.ul>
-
+        <Something />
       </div>
     </>
   );
